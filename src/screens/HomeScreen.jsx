@@ -2,8 +2,6 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../styles/colors';
 
-const FEATURES = ['Clãs e afiliações', 'Rank ninja', 'Jutsus e chakra', 'Família e dubladores'];
-
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -20,21 +18,11 @@ export default function HomeScreen({ navigation }) {
         </View>
 
         <Text style={styles.title}>Dattebayo</Text>
-        <Text style={styles.subtitle}>O Guia do Mundo Ninja</Text>
 
         <Text style={styles.description}>
           Explore os personagens de Naruto com dados completos sobre clãs, habilidades, equipes e
           muito mais — tudo a partir da API Dattebayo.
         </Text>
-
-        <View style={styles.featureGrid}>
-          {FEATURES.map((feature) => (
-            <View key={feature} style={styles.featureItem}>
-              <View style={styles.featureDot} />
-              <Text style={styles.featureText}>{feature}</Text>
-            </View>
-          ))}
-        </View>
 
         <Pressable
           style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
@@ -105,39 +93,12 @@ const styles = StyleSheet.create({
     color: colors.primaryDark,
     letterSpacing: 1,
   },
-  subtitle: {
-    fontSize: 19,
-    fontWeight: '700',
-    color: colors.primary,
-    marginTop: 4,
-  },
   description: {
     fontSize: 15,
     lineHeight: 22,
     color: colors.textMuted,
     textAlign: 'center',
     marginTop: 22,
-  },
-  featureGrid: {
-    marginTop: 26,
-    alignSelf: 'stretch',
-  },
-  featureItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  featureDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: colors.primary,
-    marginRight: 12,
-  },
-  featureText: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: colors.text,
   },
   button: {
     flexDirection: 'row',

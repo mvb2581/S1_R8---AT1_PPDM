@@ -44,7 +44,7 @@ export default function Navigator() {
       <NavigationContainer>
         <StatusBar style="light" />
         <Tab.Navigator
-          initialRouteName="Personagens"
+          initialRouteName="Início"
           screenOptions={{
             headerStyle: { backgroundColor: colors.primary },
             headerTintColor: colors.white,
@@ -55,22 +55,22 @@ export default function Navigator() {
           }}
         >
           <Tab.Screen
-            name="Personagens"
-            component={CharactersStack}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ color, size }) => (
-                <Text style={{ fontSize: size, color }}>🍥</Text>
-              ),
-            }}
-          />
-          <Tab.Screen
             name="Início"
             component={HomeScreen}
             options={{
               headerShown: false,
               tabBarIcon: ({ color, size }) => (
                 <Text style={{ fontSize: size, color }}>🏠</Text>
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Personagens"
+            component={CharactersStack}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ color, size }) => (
+                <Text style={{ fontSize: size, color }}>🍥</Text>
               ),
             }}
           />
